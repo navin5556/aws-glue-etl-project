@@ -81,10 +81,12 @@ ResolveChoice_node.printSchema()
 #convert dynamic dataframe into spark dataframe to leverage Spark’s built-in functions.
 logger.info('convert dynamic dataframe ResolveChoice_node into spark dataframe')
 spark_data_frame=ResolveChoice_node.toDF()
+spark_data_frame.show()
 
 #apply spark where clause
 logger.info('filter rows with  where new_seller_id is not null')
 spark_data_frame_filter = spark_data_frame.where("new_seller_id is NOT NULL")
+spark_data_frame.show(n=1000, truncate=False)
 
 # A new column ‘new_status’ is added to the DataFrame with a constant value ‘Active’, all rows have the value “Active”
 logger.info('create new column status with Active value')

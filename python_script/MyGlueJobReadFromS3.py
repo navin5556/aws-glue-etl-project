@@ -109,14 +109,14 @@ logger.info('convert spark dataframe to dynamic frame ')
 dynamic_frame = DynamicFrame.fromDF(product_sql_df, glueContext, "dynamic_frame")
 
 
-logger.info('dynamic frame uploaded in bucket myglue-etl-project/output/newproduct/ in parquet format ')
+logger.info('dynamic frame uploaded in bucket myglue-etl-project-s3-bucket/Output/ in parquet format ')
 # Script generated for node Amazon S3
 S3bucket_node3 = glueContext.write_dynamic_frame.from_options(
     # frame=ApplyMapping_node2, 
     frame=dynamic_frame, 
     connection_type="s3", 
     format="glueparquet", 
-    connection_options={"path": "s3://myglue-etl-project-sit/output/", "partitionKeys": []}, 
+    connection_options={"path": "s3://myglue-etl-project-s3-bucket/Output/", "partitionKeys": []}, 
     format_options={"compression": "uncompressed"}, 
     transformation_ctx="S3bucket_node3")
 

@@ -1,5 +1,6 @@
 # aws-glue-etl-project
-this repo contains python script or glue etl job
+This repo contains python script or glue etl job
+Please refer this blog for step by step guide - https://medium.com/@navin5556/mastering-aws-glue-etl-a-step-by-step-guide-to-loading-data-from-s3-to-redshift-4152be7e2922
 
 
 ## GitHub repo structure
